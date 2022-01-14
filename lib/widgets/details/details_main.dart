@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_app/models/product.dart';
+import 'package:shop_app/models/furniture_product.dart';
 import 'package:shop_app/models/product_list.dart';
 import 'package:shop_app/models/shop_class.dart';
 
@@ -25,7 +25,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   @override
   Widget build(BuildContext context) {
     final arg = ModalRoute.of(context)!.settings.arguments as ProductId;
-    Iterable<Product> _product = Provider.of<ProductProvider>(context)
+    Iterable<Furniture> _product = Provider.of<ProductProvider>(context)
         .products
         .where((element) => element.productId == arg.productId);
 
